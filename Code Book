@@ -1,0 +1,142 @@
+Feature Selection 
+=================
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+The set of variables that were estimated from these signals are: 
+
+mean(): Mean value
+std(): Standard deviation
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+gravityMean
+tBodyAccMean
+tBodyAccJerkMean
+tBodyGyroMean
+tBodyGyroJerkMean
+
+Furthermore the data set contains 2 variable identifying the observation:
+activity : a factor variable with 6 levels WALKING ; WALKING_UPSTAIRS ; WALKING_DOWNSTAIRS ; SITTING ; STANDING ; LAYING
+subject : a factor variable anonymously identifying the subject of the measurement from "1" to "30" 
+
+And so the final TidyData.txt data set contains all the measurement variables aggregated as average on both activity and subset,
+the variables are renamed as 'Average By Subject&Activity'.
+
+Please find below the names of all variables:
+ [1] "activity"                                                        
+ [2] "subject"                                                         
+ [3] "tBodyAcc-mean()-X Average By Subject&Activity"                   
+ [4] "tBodyAcc-mean()-Y Average By Subject&Activity"                   
+ [5] "tBodyAcc-mean()-Z Average By Subject&Activity"                   
+ [6] "tBodyAcc-std()-X Average By Subject&Activity"                    
+ [7] "tBodyAcc-std()-Y Average By Subject&Activity"                    
+ [8] "tBodyAcc-std()-Z Average By Subject&Activity"                    
+ [9] "tGravityAcc-mean()-X Average By Subject&Activity"                
+[10] "tGravityAcc-mean()-Y Average By Subject&Activity"                
+[11] "tGravityAcc-mean()-Z Average By Subject&Activity"                
+[12] "tGravityAcc-std()-X Average By Subject&Activity"                 
+[13] "tGravityAcc-std()-Y Average By Subject&Activity"                 
+[14] "tGravityAcc-std()-Z Average By Subject&Activity"                 
+[15] "tBodyAccJerk-mean()-X Average By Subject&Activity"               
+[16] "tBodyAccJerk-mean()-Y Average By Subject&Activity"               
+[17] "tBodyAccJerk-mean()-Z Average By Subject&Activity"               
+[18] "tBodyAccJerk-std()-X Average By Subject&Activity"                
+[19] "tBodyAccJerk-std()-Y Average By Subject&Activity"                
+[20] "tBodyAccJerk-std()-Z Average By Subject&Activity"                
+[21] "tBodyGyro-mean()-X Average By Subject&Activity"                  
+[22] "tBodyGyro-mean()-Y Average By Subject&Activity"                  
+[23] "tBodyGyro-mean()-Z Average By Subject&Activity"                  
+[24] "tBodyGyro-std()-X Average By Subject&Activity"                   
+[25] "tBodyGyro-std()-Y Average By Subject&Activity"                   
+[26] "tBodyGyro-std()-Z Average By Subject&Activity"                   
+[27] "tBodyGyroJerk-mean()-X Average By Subject&Activity"              
+[28] "tBodyGyroJerk-mean()-Y Average By Subject&Activity"              
+[29] "tBodyGyroJerk-mean()-Z Average By Subject&Activity"              
+[30] "tBodyGyroJerk-std()-X Average By Subject&Activity"               
+[31] "tBodyGyroJerk-std()-Y Average By Subject&Activity"               
+[32] "tBodyGyroJerk-std()-Z Average By Subject&Activity"               
+[33] "tBodyAccMag-mean() Average By Subject&Activity"                  
+[34] "tBodyAccMag-std() Average By Subject&Activity"                   
+[35] "tGravityAccMag-mean() Average By Subject&Activity"               
+[36] "tGravityAccMag-std() Average By Subject&Activity"                
+[37] "tBodyAccJerkMag-mean() Average By Subject&Activity"              
+[38] "tBodyAccJerkMag-std() Average By Subject&Activity"               
+[39] "tBodyGyroMag-mean() Average By Subject&Activity"                 
+[40] "tBodyGyroMag-std() Average By Subject&Activity"                  
+[41] "tBodyGyroJerkMag-mean() Average By Subject&Activity"             
+[42] "tBodyGyroJerkMag-std() Average By Subject&Activity"              
+[43] "fBodyAcc-mean()-X Average By Subject&Activity"                   
+[44] "fBodyAcc-mean()-Y Average By Subject&Activity"                   
+[45] "fBodyAcc-mean()-Z Average By Subject&Activity"                   
+[46] "fBodyAcc-std()-X Average By Subject&Activity"                    
+[47] "fBodyAcc-std()-Y Average By Subject&Activity"                    
+[48] "fBodyAcc-std()-Z Average By Subject&Activity"                    
+[49] "fBodyAcc-meanFreq()-X Average By Subject&Activity"               
+[50] "fBodyAcc-meanFreq()-Y Average By Subject&Activity"               
+[51] "fBodyAcc-meanFreq()-Z Average By Subject&Activity"               
+[52] "fBodyAccJerk-mean()-X Average By Subject&Activity"               
+[53] "fBodyAccJerk-mean()-Y Average By Subject&Activity"               
+[54] "fBodyAccJerk-mean()-Z Average By Subject&Activity"               
+[55] "fBodyAccJerk-std()-X Average By Subject&Activity"                
+[56] "fBodyAccJerk-std()-Y Average By Subject&Activity"                
+[57] "fBodyAccJerk-std()-Z Average By Subject&Activity"                
+[58] "fBodyAccJerk-meanFreq()-X Average By Subject&Activity"           
+[59] "fBodyAccJerk-meanFreq()-Y Average By Subject&Activity"           
+[60] "fBodyAccJerk-meanFreq()-Z Average By Subject&Activity"           
+[61] "fBodyGyro-mean()-X Average By Subject&Activity"                  
+[62] "fBodyGyro-mean()-Y Average By Subject&Activity"                  
+[63] "fBodyGyro-mean()-Z Average By Subject&Activity"                  
+[64] "fBodyGyro-std()-X Average By Subject&Activity"                   
+[65] "fBodyGyro-std()-Y Average By Subject&Activity"                   
+[66] "fBodyGyro-std()-Z Average By Subject&Activity"                   
+[67] "fBodyGyro-meanFreq()-X Average By Subject&Activity"              
+[68] "fBodyGyro-meanFreq()-Y Average By Subject&Activity"              
+[69] "fBodyGyro-meanFreq()-Z Average By Subject&Activity"              
+[70] "fBodyAccMag-mean() Average By Subject&Activity"                  
+[71] "fBodyAccMag-std() Average By Subject&Activity"                   
+[72] "fBodyAccMag-meanFreq() Average By Subject&Activity"              
+[73] "fBodyBodyAccJerkMag-mean() Average By Subject&Activity"          
+[74] "fBodyBodyAccJerkMag-std() Average By Subject&Activity"           
+[75] "fBodyBodyAccJerkMag-meanFreq() Average By Subject&Activity"      
+[76] "fBodyBodyGyroMag-mean() Average By Subject&Activity"             
+[77] "fBodyBodyGyroMag-std() Average By Subject&Activity"              
+[78] "fBodyBodyGyroMag-meanFreq() Average By Subject&Activity"         
+[79] "fBodyBodyGyroJerkMag-mean() Average By Subject&Activity"         
+[80] "fBodyBodyGyroJerkMag-std() Average By Subject&Activity"          
+[81] "fBodyBodyGyroJerkMag-meanFreq() Average By Subject&Activity"     
+[82] "angle(tBodyAccMean,gravity) Average By Subject&Activity"         
+[83] "angle(tBodyAccJerkMean),gravityMean) Average By Subject&Activity"
+[84] "angle(tBodyGyroMean,gravityMean) Average By Subject&Activity"    
+[85] "angle(tBodyGyroJerkMean,gravityMean) Average By Subject&Activity"
+[86] "angle(X,gravityMean) Average By Subject&Activity"                
+[87] "angle(Y,gravityMean) Average By Subject&Activity"                
+[88] "angle(Z,gravityMean) Average By Subject&Activity" 
+
+
